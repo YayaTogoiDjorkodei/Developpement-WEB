@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+            padding: 100px;
+            background-color: antiquewhite;
+            border-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h1>ajouter</h1>
+    <form name="fo">
+        <input type="text" name="n" id="n">
+        <input type="button" value="ajouter" name="ajouter" onclick="f()">
+    </form>
+    <ul id="list"></ul>
+    <script>
+        function f(){
+        let list=document.getElementById("list");
+        let li=document.createElement("li");
+        li.innerHTML=document.getElementById("n").value;
+        let br=document.createElement("button");
+        br.innerHTML="suprimer";
+        //br.onclick=function(){
+          //  li.remove();
+        //}
+        br.addEventListener("click",function(){
+            li.remove();
+        });
+        li.appendChild(br);
+        list.appendChild(li);
+        document.fo.n.value="";
+        }
+    </script>
+</body>
+</html>

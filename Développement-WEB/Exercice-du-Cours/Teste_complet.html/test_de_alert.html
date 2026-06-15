@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="fo">
+        <label for="n">Nom:</label>
+        <input type="text" name="n" id="n" placeholder="entrez votre nom"><br>
+        <label for="p">Prenom:</label>
+        <input type="text" name="p" id="p" placeholder="entrez votre prenom"><br>
+        <label for="dt">date de naissanc</label>
+        <input type="date" name="dt" id="dt" required><br>
+        <label for="Email">Entre votre Email</label>
+        <input type="email" name="Email" id="Email"><br>
+        <label for="pss">Mode de passe</label>
+        <input type="password" name="pss" id="pss" required pattern="[0-9]{6}" title="le Mode de passe doite contenir que 6 chiffre"><br>
+        <input type="button" value="Envoyer" onclick="f()"><br>
+        <input type="submit" name="envoyer" id="envoyer">
+    </form>
+    <script>
+        //var d=prompt("entre votre nom");
+        //alert(d);
+        function f(){
+            let t=document.getElementById("Email").value;
+            var s=document.getElementById("n").value;
+            var p=document.getElementById("p").value
+            alert("bonjour "+s+" "+p+" on va vous repondre par l'adresse a l'email "+t);
+        }
+        window.addEventListener("submit",function(){
+                alert("la page a ete completement charger");
+            });
+    </script>
+</body>
+</html>

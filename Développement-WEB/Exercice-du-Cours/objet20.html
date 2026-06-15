@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="document.fo.nom.focus()">
+   <h1>Resolutuon:</h1> 
+   <form name="fo">
+    <label for="nom">chaine:</label>
+    <input type="text" name="nom" id="nom" ><br>
+    <label for="m">mots Longue</label>
+    <input type="text" name="m" id="m"><br>
+    <input type="button" value="Envoyer" onclick="f()">
+   </form>
+   <script>
+    function f(){
+        let s=document.fo.nom.value;
+        let k=s.split(" ");
+        var mot="";
+        for(let i=0;i<k.length;i++){
+            if(mot<k[i]){
+                mot=k[i];
+            }
+        }
+        document.fo.m.value=mot;
+    }
+    function h(){
+        setTimeout("f(),3000");
+    }
+    function g(){
+        alert("bonjour");
+        setTimeout("f()",5000);
+     }
+   </script>
+</body>
+</html>

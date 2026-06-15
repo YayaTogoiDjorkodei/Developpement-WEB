@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .erreur{
+            border-color: red;
+            border-style: double;
+        }
+        #c{
+            color: red;
+            display: none;
+            font-size: 15px;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .m{
+            display: flex;
+            gap: 10px;
+           align-items: center;
+           margin-bottom: 10px;
+
+        }
+        #Nom{
+         border-color: orange;
+        }
+        .modepasse{
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        #passe{
+            color: red;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            font-weight: bold;
+            display: none;
+        }
+        #valide{
+            color:green;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            font-weight: bold;
+            display: none;
+    
+        }
+    </style>
+</head>
+<body>
+    <form name="fo">
+        <div class="m">
+        <label for="Nom">NOM</label>
+        <input type="text" name="Nom" id="Nom">
+         <p id="c">
+            Vous avez depasser le nombre limite de caracter (20 caracter maximun)
+        </p>
+     </div>
+     <DIV class="modepasse">
+        <label for="Password">Password:</label>
+        <input type="password" name="password" id="password">
+        <p id="passe">le mode de passe doite contenire au moise: <br> une lettre majuscule  <br>un lettre minusvule <br>un chiffre <br> et une symbole</p>
+        <p id="valide">Mode de passe valide</p>
+    </div>
+    </form>
+   
+    <script>
+        let max=10;
+        let text=document.getElementById("Nom");
+        let di=document.getElementById("c");
+        text.addEventListener("input",function(){
+            if(text.value.length>max){
+                text.classList.add('erreur');
+                di.style.display='block';
+            }
+            else{
+                text.classList.remove('erreur');
+                di.style.display='none';
+            }
+        })
+        let mode=6;
+        let a=document.getElementById("password");
+        let password=document.getElementById("passe");
+        var valide=document.getElementById("valide");
+        a.addEventListener("input",function(){
+            var valeur=a.value;
+            var masjucule=/[A-Z]/;
+            var muniscule=/[a-z]/;
+            var chiffre=/[0-9]/;
+            var symbole=/[^a-zA-Z0-9]/;
+            if(masjucule.test(valeur) && muniscule.test(valeur) && chiffre.test(valeur) && symbole.test(valeur)){
+               a.classList.remove('erreur');
+                password.style.display='none';
+                valide.style.display='block';
+            }
+            else{
+                a.classList.add('erreur');
+                password.style.display='none';
+                password.style.display='block';
+            }
+        })
+    </script>
+</body>
+</html>

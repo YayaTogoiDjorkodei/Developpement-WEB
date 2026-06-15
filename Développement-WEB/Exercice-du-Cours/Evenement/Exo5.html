@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Resolutuon:</h1>
+    <form name="fo">
+        <label for="NOM">nombre:</label>
+        <input type="text" name="NOM" id="NOM">
+        <br>
+        <input type="button" value="Envoyer" onclick="f()">
+        <div id="re"></div>
+    </form>
+    <script>
+        function f(){
+        let s=Number(document.getElementById("NOM").value);
+        let p=document.getElementById("re");
+        let str="";
+        for (let i = 0; i <=12; i++) {
+           str+=i+"*"+s+"="+(i*s)+"<br>" 
+        }
+        p.innerHTML=str;
+        }
+    </script>
+</body>
+</html>

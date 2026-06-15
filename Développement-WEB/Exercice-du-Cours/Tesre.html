@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        titre principale
+    </h1>
+    <form name="fo">
+        <label for="nom">nom:</label>
+        <input type="text" name="nom" id="nom"><br>
+        <label for="prenom">prenom:</label>
+        <input type="text" name="prenom" id="prenom">
+        <br>
+        <input type="button" value="Envoyer" onclick="f()">
+    </form>
+    <script>
+        // on apelle lafuntion sans parenthes et 
+        // il est posibler de placer le function ehcanger au debut ou a la fin
+        function h(){
+            let a=document.fo.nom.value;
+            document.fo.nom.value=document.fo.prenom.value;
+            document.fo.prenom.value=a;
+        }
+        function f(){
+            setTimeout(h,3000);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<html>
+
+
+    <head>
+        <style>
+
+        .conteneur{
+            border-style: double;
+            color: black;
+            border-color: black;
+            width: 100%;
+            display:inline-flex;
+        }
+
+        .boite{
+            border-style: double;
+            background-color: antiquewhite;
+            border-color: black;
+            width: 80px;
+            height: 80px;
+            
+        }
+
+
+
+
+        </style>
+
+    </head>
+
+
+    <body>
+        <div class="conteneur" id="conteneur"></div>
+        <br>
+        <input type="button" value="ajouter" onclick="ajouter()">
+        <input type="button" value="supprimer" onclick="supprimer()">
+
+    </body>
+
+    <script>
+var i = 0;
+        function ajouter(){
+
+            let b = document.createElement("div");
+            b.innerText = "nouvelle boite : " + i;
+            i++;
+            b.className = "boite";
+
+            document.getElementById("conteneur").appendChild(b);
+           
+        }
+
+        function supprimer(){
+            let d = document.getElementsByClassName("boite");
+            d[d.length-1].remove();
+
+        }
+
+
+
+    </script>
+
+
+</html>

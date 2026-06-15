@@ -1,0 +1,36 @@
+#key{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+    padding: 25px;
+}
+#champs{
+    padding: 20px;
+    width: px;
+    font-size: 5rem;
+    text-align: left;
+    background-color: rgb(144, 150, 150);
+    color: white;
+  }  
+#calculator{
+background-color:rgb(66, 60, 60) ;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 10px;
+    max-width: 500px;
+    overflow: hidden;
+
+}
+button{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    background-color:gray;
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+button:hover{
+    background-color: rgb(236, 184, 12);
+}

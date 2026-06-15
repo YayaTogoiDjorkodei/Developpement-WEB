@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Nomber choisi entrez 1 et 10</h1>
+    <script>
+        let n=Math.floor(Math.random()*10)+1;
+        let s=25;
+        let esssey=0;
+        let nbr;
+        alert("un nbr a ete genere entre 1 et 10 deviner se nbr la");
+        while (s>0) {
+            nbr=parseInt(prompt("Deviner le nbr"));
+            s=s-5
+            esssey=esssey+1;
+            if (nbr==n) {
+                alert("Bravo vous avez trouver le nbr a "+esssey+" essey" );
+                break;
+            }
+            else if (nbr>n) {
+                alert(" entrez un nbre plus petit");
+            }
+            else {
+                alert("entrez un nbr plus grand");
+            }
+        }
+        if (s<=0 && nbr!==n) {
+            alert("vous avez perdu le nbr etait "+n);
+        }
+    </script>
+</body>
+</html>

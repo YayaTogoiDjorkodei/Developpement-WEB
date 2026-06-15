@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff5f7;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: #f8d7da;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #6b3e4b;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* HERO */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px;
+    background: #fce4ec;
+}
+
+.hero-text h1 {
+    font-size: 40px;
+    color: #5c3b45;
+}
+
+.hero-text button {
+    padding: 10px 20px;
+    background: #d18fa3;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.hero-images img {
+    width: 150px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+/* SIGNATURE */
+.signature {
+    text-align: center;
+    padding: 50px;
+}
+
+.signature h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    width: 200px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* PROMO */
+.promo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px;
+    background: #f8d7da;
+}
+
+.promo-text h2 {
+    font-size: 30px;
+}
+
+.discount {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.promo button {
+    padding: 10px 20px;
+    border: none;
+    background: #b76e79;
+    color: white;
+    cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #fce4ec;
+}
+
+footer input {
+    padding: 10px;
+    margin: 10px;
+}
+
+footer button {
+    padding: 10px;
+    background: #d18fa3;
+    border: none;
+    color: white;
+    cursor: pointer;
+}

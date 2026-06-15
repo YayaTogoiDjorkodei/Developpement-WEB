@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        #n{
+            margin: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exo1</h1>
+    <div>
+   <form name="fo">
+    <input type="text" name="n" id="n"><br>
+    <input type="button" id="n" value="+" name="+" onclick="a()">
+    <input type="button" id="n" value="-" name="-" onclick="s()">
+    <input type="button" id="n" value="renetialise" name="renetialise" onclick="r()">
+   </form> 
+   </div>
+   <script>
+    let c=document.fo.n.value;
+    function a(){
+        alert(c);
+    }
+      function a(){
+        let a=parseInt(document.getElementById("n").value);
+        document.getElementById("n").value=a+1;
+        document.getElementById("n").style.color="red";
+    }
+     function s(){
+     let a=parseInt(document.getElementById("n").value);
+        document.getElementById("n").value=a-1;
+        document.getElementById("n").style.color="green";
+    }
+    function r(){
+        let a=parseInt(document.getElementById("n").value);
+        document.getElementById("n").value=0;
+        document.getElementById("n").style.color="black";
+    }
+   </script>
+</body>
+</html>

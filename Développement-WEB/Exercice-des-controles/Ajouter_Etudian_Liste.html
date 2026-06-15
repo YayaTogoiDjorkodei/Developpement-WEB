@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .t{
+            font-size: 15px;
+            font-family: sans-serif;
+            font-weight: 10px;
+        }
+        body{
+           padding-top: 100px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: bold;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <h1>Liste:</h1>
+    <input type="text" id="d">
+    <input type="button" onclick="f()" name="Valider" value="valider">
+    <ul id="contenair">
+        <li>Yaya Togoi</li>
+        <li>Ousman Togoi</li>
+    </ul>
+    <script>
+        function f(){
+            var a=document.getElementById("contenair");
+            let b=document.createElement("li");
+            b.innerHTML=document.getElementById("d").value;
+            b.className="t";
+            var btn=document.createElement("button");
+            btn.innerHTML="Suprimer";
+            btn.addEventListener("click",function(){
+                //f(!window.confirm)
+                b.remove();
+            })
+            b.appendChild(btn);
+            a.appendChild(b);
+            document.getElementById("d").value="";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Resolutuon:</h1>
+    <form name="fo">
+        <label for="chaine">Nom complet:</label>
+        <input type="text" name="chaine" id="chaine">
+        <br>
+        <label for="nom">Nom:</label>
+        <input type="text" name="nom" id="nom">
+        <br>
+        <label for="prenom">Prenom</label>
+        <input type="text" name="prenom" id="prenom">
+        <input type="button" value="Envoyer" onclick="f()">
+    </form>
+    <script>
+        function f(){
+            let s=document.fo.chaine.value;
+            let a=false;
+            for (let i = 0; i < s.length; i++) {
+                if(s[i]==" " && a==false)
+                a=true;
+               if(a==false)
+                       document.fo.nom.value+=s[i].toUpperCase();
+               else
+                   document.fo.prenom.value+=s[i].toLowerCase();
+            }
+        }
+    </script>
+</body>
+</html>

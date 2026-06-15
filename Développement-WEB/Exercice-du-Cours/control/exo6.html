@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .d{
+            height:80px;
+            width: 11%;
+            border: 2px solid black;
+            text-align: center;
+            display: inline-block; /*a linterieur dun contenait*/
+            display: inline-flex;/*sans contenair*/
+            background-color: rgb(151, 213, 230);
+            line-height: 80px;
+        }
+    </style>
+</head>
+<body>    
+    <div id="di"></div>
+    <button type="button" onclick="f()">ajouter</button>
+    <button type="button" onclick="g()">suprimer</button>
+    <script>
+        var c=1;
+        function f(){
+            let n=document.createElement('div');
+            n.className="d";
+            n.innerHTML="texte"+c;
+            document.getElementById("di").appendChild(n);
+            c++;
+        }
+        function g(){
+            let a=document.getElementsByClassName('d');
+            a[a.length-1].remove();
+            c--;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="fo">
+        <input type="text" name="champs">
+        <input type="button" name="envoyer" value="envoyer" onclick="f()">
+        <input type="button" value="reset" name="reset" onclick="g()">
+    </form>
+    <script>
+        var i=10;
+        function f(){
+            t=setTimeout("f()",1000);
+            document.fo.champs.value=i;
+            i--;
+            if(i==0){
+                  clearTimeout(t); 
+            }
+          }
+          function g(){
+            i=10;
+          }
+    </script>
+</body>
+</html>

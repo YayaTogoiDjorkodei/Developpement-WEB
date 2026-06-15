@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Formulair</h1>
+    <form action="../FNT_date.html" method="post" name="fo">
+        <label for="nom" >nom</label>
+        <input type="text" name="nom" id="nom" required autofocus><br>
+        <label for="prenom">Prenom:</label>
+        <input type="text" name="prenom" id="prenom" required><br>
+        <label for="mod">Mode de passe</label>
+        <input type="password" name="mod" id="mod" required><br>
+        <label for="dat">Date de naissanc:</label>
+        <input type="date" name="dat" id="dat"><br>
+        <label for="code">Code postale:</label>
+        <input type="text" name="code" id="code" pattern="[0-9]{5}" title="le code postale doite contnir que 5 chiffre"><br>
+        <label for="mail">Email:</label>
+        <input type="email" name="mail" id="mail" required><br>
+        <label for="commentair">Commentair:</label>
+        <textarea name="commentair" id="commentair"></textarea><br>
+        <label for="gern"><input type="radio"  name="gerne" gerid="n" value="Homme">Homme</label><br>
+        <label for="ger"><input type="radio" name="gerne" id="ger" value="Femme">Femm</label><br>
+        <button type="submit">S'abonner</button>
+    </form>
+</body>
+</html>

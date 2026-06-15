@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="fo">
+        <input type="text" name="nbr">
+        <input type="button" value="envoyer" name="envoyer" onclick="f()">
+    </form>
+    <script>
+        function f(){
+            var str="";
+            setTimeout("f()",1000)
+            var d=new Date();
+            var  h=d.getHours();
+            var m=d.getMinutes();
+            var s=d.getSeconds();
+            if(h<10){
+                str=str + "0" + h + ":";
+            }
+            else{
+                str=str+h+":";
+            }
+            if(m<10){
+                str=str+"0" +m+ ":";
+            }
+            else{
+                str=str+m+":";
+            }
+            if(s<10){
+                str=str+"0" +s;
+            }
+            else{
+                str=str+s;
+            }
+            document.fo.nbr.value=str;
+        }
+    </script>
+</body>
+</html>

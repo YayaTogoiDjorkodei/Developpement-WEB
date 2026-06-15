@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Titre principal</h1>
+    <form name="fo">
+        <label for="texte">Texte:</label>
+        <input type="text" name="texte" id="texte">
+        <br>
+        <label for="resultat">resultat</label>
+        <input type="text" name="resultat" id="resultat">
+        <br>
+        <input type="button" value="Envoyer" onclick="f()">
+    </form>
+    <script>
+        function f(){
+            let s=document.fo.texte.value;
+            let mots="javaScripte";
+            let c=-1;
+            for (let i = 0; i < s.length -mots.length; i++) {
+                let str="";
+                for (let j = 0; j < mots.length; j++) {
+                    str=str+s[i+j];
+                }
+                if(str==mots)
+                c=+1;
+            }
+            if(c==1)
+            document.fo.resultat.value=mots +" existe";
+            else
+            document.fo.resultat.value=mots+" n'existe pas";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Compteur</title>
+    <style>
+        body{
+            text-align:center;
+            font-family:Arial, sans-serif;
+            margin-top:100px;
+        }
+
+        #compteur{
+            font-size:50px;
+            font-weight:bold;
+            color:black;
+            margin:20px;
+        }
+
+        button{
+            padding:10px 20px;
+           font-size:18px;
+            margin:5px;
+            cursor:pointer;
+        }
+        button:hover{
+            border-style: double;
+            border-color: black;
+            color: brown;
+            background-color:aquamarine;
+        }
+        button:active{
+            background-color:blue;
+        }
+        button:focus{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Compteur</h1>
+
+    <div id="compteur">0</div>
+
+    <button onclick="incrementer()">+1</button>
+    <button onclick="decrementer()">-1</button>
+    <button onclick="reinitialiser()">Réinitialiser</button>
+
+    <script>
+        let compteur = 0;
+        let affichage = document.getElementById("compteur");
+
+        function mettreAJour() {
+            affichage.textContent = compteur;
+
+            if (compteur > 0) {
+                affichage.style.color = "green";
+            }
+            else if (compteur < 0) {
+                affichage.style.color = "red";
+            }
+            else {
+                affichage.style.color = "black";
+            }
+        }
+
+        function incrementer() {
+            compteur++;
+            mettreAJour();
+        }
+
+        function decrementer() {
+            compteur--;
+            mettreAJour();
+        }
+
+        function reinitialiser() {
+            compteur = 0;
+            mettreAJour();
+        }
+    </script>
+
+</body>
+</html>

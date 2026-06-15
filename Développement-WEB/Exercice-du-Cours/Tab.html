@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="fo">
+        <label for="ch">chaine:</label>
+        <input type="text" name="ch" id="ch"><br>
+        <label for="n">nom:</label>
+        <input type="text" name="n" id="n"><br>
+        <label for="p">prenom</label>
+        <input type="text" name="p" id="p">
+        <input type="button" value="Envoer" onclick="f()">
+    </form>
+    <script>
+        function f(){
+            let a=document.fo.ch.value;
+            b=a.split(" ");
+            let co=-1;
+            for (let i = 0; i <= b.length-1; i++) {
+                if(b[i]=="javascripte"){
+                    co=1;
+                   }
+            }
+            if(co==1){
+                document.fo.n.value="existe";
+            }
+            else{
+                document.fo.p.value=" introuvable";
+            }
+        }
+    </script>
+</body>
+</html>

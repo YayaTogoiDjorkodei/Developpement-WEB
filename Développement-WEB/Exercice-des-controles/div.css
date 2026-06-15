@@ -1,0 +1,13 @@
+container{
+      border-style: double;
+    }
+    .box{
+        text-align: center;
+        padding: 2px;
+        margin: 2px;
+      border-style: double;
+      background-color: aqua;
+      width: 80px;
+      height: 80px;
+      display:inline-flex;
+    }

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       body{
+        text-align: center;
+        background-color: antiquewhite;
+       }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;color: blue;">Exercice de 3 a 5</h1>
+    <h1 style="text-align: center; color: blue;" id="heur"></h1>
+    <form name="fo">
+        <label for="n">Nom:</label>
+        <input type="text" name="n" id="n" placeholder="Entrez votre nom ici"><br>
+        <label for="s">Sujet:</label>
+        <input type="text" name="s" id="s" placeholder="Entrez votre sujet ici"><br>
+        <input type="button" value="Inscrire" name="Inscrire" onclick="ajouter()">
+    </form>
+    <div id="liste" class="liste_etudiant"></div>
+    <script>
+        let  listeStagiaires=[{
+            id:1,
+             nom:"YAYA", 
+             sujet:"HTM",
+             estValide:true
+        },
+        {
+            id:2,
+            nom:"OUSMANE",
+            sujet:"Algorithme_Avancée",
+            estValide:true
+        }
+    ];
+    function ajouter(){
+        let nom=document.getElementById("n").value;
+        let sujet=document.getElementById("s").value;
+        if(nom==="" || sujet===""){
+            alert("le champs est vide veuillez remplir!!!");
+            return;
+        }
+        const monts=sujet.split(" ");
+        if(monts.length<3){
+            alert("le sujet dois avoirs au moinse 3 mots!!!");
+            return;
+        }
+        if(!confirm("voulez vous ajouter se stagair a la liste"))
+            return;
+        let ID=listeStagiaires.length+1;
+        let objet={
+            id:ID,
+            nom:nom,
+            sujet:sujet,
+            valider:true
+        }
+        listeStagiaires.push(objet);
+        console.log("la taille actuelle est "+listeStagiaires.length);
+        document.getElementById("n").value="";
+        document.getElementById("s").value="";
+        afficher()
+    }
+    function afficher(){
+        let list=document.getElementById("liste");
+        for(let stagair of listeStagiaires){
+            let li=document.createElement("li");
+            li.innerHTML=stagair.nom+" "+stagair.sujet;
+            let btn=document.createElement("button");
+            btn.innerHTML="Suprimer";
+            btn.addEventListener("click",()=>{
+                let position=listeStagiaires.indexOf(stagair);
+                listeStagiaires.splice(position,1);
+                li.remove();
+            });
+            li.appendChild(btn);
+            list.appendChild(li);
+        }
+        actualiser()
+    }
+    function actualiser(){
+        let H=new Date();
+        let h=H.getHours();
+        let m=H.getMinutes();
+        let s=H.getSeconds();
+        document.getElementById("heur").innerHTML=h+" "+m+" "+s;
+    }
+    </script>
+</body>
+</html>

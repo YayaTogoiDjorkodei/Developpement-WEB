@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="fo">
+        <input type="text" name="nbr">
+        <input type="text" name="ind">
+        <br>
+        <input type="text" name="n">
+        <input type="button" value="jouer" name="jouer" onclick="f()">
+    </form>
+    <script>
+        var n= Math.floor(Math.random()*11)+11;
+        function f(){
+            document.fo.n.value=n;
+            var s=document.fo.nbr.value;
+            if(s<n){
+                document.fo.ind.value="donner un valuer plus grand";
+            }
+            else if(s>n){
+                document.fo.ind.value="donner un valeur plus petit";
+            }
+            else{
+                document.fo.ind.value="Bravo!"
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horloge Temps Réel</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: #222;
+            font-family: Arial, sans-serif;
+        }
+
+        #horloge {
+            color: white;
+            font-size: 60px;
+            font-weight: bold;
+            padding: 20px 40px;
+            border: 3px solid white;
+            border-radius: 15px;
+            background: #333;
+            box-shadow: 0 0 20px rgba(255,255,255,0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="horloge">00:00:00</div>
+
+    <script>
+        function afficherHeure() {
+            const maintenant = new Date();
+
+            let heures = maintenant.getHours();
+            let minutes = maintenant.getMinutes();
+            let secondes = maintenant.getSeconds();
+
+            heures = String(heures).padStart(2, '0'); 
+            secondes = String(secondes).padStart(2, '0');
+            minutes = String(minutes).padStart(2, '0');
+            document.getElementById("horloge").textContent =
+                `${heures}:${minutes}:${secondes}`;
+        }
+
+        afficherHeure(); 
+        setInterval(afficherHeure, 1000); 
+    </script>
+
+</body>
+</html>

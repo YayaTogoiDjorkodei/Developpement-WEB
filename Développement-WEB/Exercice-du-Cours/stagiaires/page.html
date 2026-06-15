@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Suivi de Stage - EST Kénitra</title>
+    <style>
+        .clignotement { border: 2px solid green; transition: 0.5s; }
+        #liste-stagiaires li { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Gestion des Stagiaires</h1>
+    <p id="horodatage"></p>
+
+    <form id="form-stage">
+        <input type="text" id="nom" placeholder="Nom du stagiaire">
+        <input type="text" id="sujet" placeholder="Sujet du stage">
+        <button type="button" onclick="ajouterStagiaire()">Inscrire</button>
+    </form>
+
+    <ul id="liste-stagiaires"></ul>
+
+    <script src="app.js"></script>
+</body>
+</html>

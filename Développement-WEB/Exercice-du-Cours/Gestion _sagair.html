@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Gestion de Stagaire</h1>
+    <form name="fo">
+        <input type="text" name="n" id="n" placeholder="Entre votre nom">
+        <input type="text" name="s" id="s" placeholder="Entre votre prenom">
+        <input type="button" value="Envoyer" onclick="f()">
+    </form>
+    <script>
+        let gestion=[
+            {
+                id:1,
+                nom:Yayay,
+                prenom:Togoi,
+                sujet:WEB,
+                statut:true
+            },
+            {
+                id:2,
+                nom:"A",
+                prenom:"T",
+                sujet:"Mahs",
+                statut:true
+            }
+        ]
+        function f(){
+            console.log("il ya actuelement "+gestion.length+" etudiant enrrgister");
+            let nom=document.getElementById("n").value;
+            let sujet=document.getElementById("s").value;
+            nom=nom.toUpperCase();
+            sujet=sujet.toLowerCase();
+            let moste=sujet.split(" ");
+            if(nom==="" || sujet===""){
+                alert("vous deviez remplire le champs !!");
+                return;
+            }
+            if(moste.length<3){
+                alert("le sujet doite contenir au monise 3 mots");
+                return;
+            }
+            let dd=gestion.length+1;
+            let neauvau={
+                id:dd,
+                nom:nom,
+                sujet:sujet,
+                valider:true
+            }
+            gestion.push(neauvau);
+        }
+        console.log(gestion.length);
+        
+    </script>
+</body>
+</html>

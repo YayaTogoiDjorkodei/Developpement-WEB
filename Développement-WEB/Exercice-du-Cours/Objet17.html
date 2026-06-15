@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Resolutuon:</h1>
+    <form name="fo">
+        <label for="texte">Texte:</label>
+        <input type="text" name="texte" id="texte">
+        <br>
+        <label for="inverse">inverse:</label>
+        <input type="text" name="inverse" id="inverse">
+        <br>
+        <input type="button" value="Envoyer" onclick="f()">
+    </form>
+    <script>
+        function f(){
+            let s=document.fo.texte.value;
+            let inverse="";
+            for (let i = 0; i < s.length; i++) {
+                inverse=s[i]+inverse;
+            }
+            document.fo.inverse.value=inverse;
+        }
+    </script>
+</body>
+</html>

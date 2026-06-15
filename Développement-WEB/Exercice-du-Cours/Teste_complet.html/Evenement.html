@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="fo">
+        <label for="nom">Nom:</label>
+        <input type="text" name="nom" id="nom"><br>
+        <label for="prenom">prennom:</label>
+        <input type="text" name="prenom" id="prenom"><br>
+        <div id="di"></div>
+        <div id="d"></div>
+    </form>
+    <script>
+        //let s=prompt("entrez le nom :");
+        //document.fo.prenom.value=s;
+        var d=document.getElementById("d");
+        var nom=document.getElementById("nom");
+        var p=document.getElementById("di");
+        nom.addEventListener("input",function(){
+            p.innerText=nom.value//+nom.value;
+            d.innerHTML=nom.value.length//*2;
+            console.log(p);
+            console.log(d);
+        });
+    </script>
+</body>
+</html>

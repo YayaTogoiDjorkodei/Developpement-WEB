@@ -1,0 +1,38 @@
+<html>
+
+<head>
+
+
+</head>
+
+
+<body>
+    <h3>ajouter à la liste</h3>
+    <form name="fo">
+        <input type="text" name="vleur" id="valeur"> 
+        <input type="button" value="ajouter" onclick="ajouter()">
+    </form>
+
+    <h3>Liste : </h3>
+
+    <ul id="liste">
+        <li>acheter un libre</li>
+        <li>reviser javascript</li>
+
+    </ul>
+
+
+    <script>
+
+        function ajouter(){
+            let txt = document.fo.valeur.value;
+            let liste = document.getElementById("liste");
+            let elem = document.createElement("li");
+            elem.innerText = txt;
+            liste.appendChild(elem);
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+            border-color:antiquewhite;
+            padding-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <form name="fo">
+        <label for="m">nom</label>
+        <input type="text" name="m" id="m"><br>
+        <label for="e">extrair:</label>
+        <input type="text" name="e" id="e"><br>
+        <label for="ex">saisis:</label>
+        <input type="text" name="ex" id="ex"><br>
+        <input type="button" value="Envoyer" onclick="f()">
+        <div id="res"></div>
+    </form>
+    <script>
+        var n=new Date();
+        alert(n.toLocaleDateString("fr-FR", { weekday: "long" }));
+        function f(){
+            let a=document.fo.m.value;
+            let k=a.split(" ");
+            let co=-1;
+            let b=a.substring(0,4);
+            document.fo.e.value=b;
+            document.fo.saisi.value=a.substring(4,a.length-1);
+            console.log(k);
+            if(k[i]=="yaya"){
+                co=1;
+            }
+            if(co==1){
+                alert("yaya existe");
+            }
+            let phrase = "HTML CSS JavaScript";
+           let words = phrase.split(" ");
+           console.log(words);
+        }
+    </script>
+</body>
+</html>
