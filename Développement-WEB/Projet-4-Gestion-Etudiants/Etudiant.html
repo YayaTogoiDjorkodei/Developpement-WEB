@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+    font-family: Arial, sans-serif;
+    background-color:#f6d1d1;
+}
+
+form{
+    width:350px;
+    margin:auto;
+    padding:20px;
+    background:rgb(241, 229, 229);
+    border-radius:10px;
+    box-shadow:0 0 10px rgb(165, 162, 162);
+}
+
+input{
+    width:100%;
+    padding:8px;
+    margin-top:5px;
+    margin-bottom:10px;
+}
+
+input[type="button"]{
+    background:#0d6efd;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+input[type="button"]:hover{
+    background:#084298;
+}
+    </style>
+</head>
+<body>
+    <form name="fo">
+        <label form="N"> Nom :</label>
+        <input type="text" id="N" name="Nom" placeholder="Entrez votre Nom Ici"><br>
+        <label>Prenom :</label>
+        <input type="text" id="P" name="Presnom" placeholder="Entrez Votre Prenom"><br>
+        <label>Age :</label>
+        <input type="text" id="age" name="age" placeholder="Entrez votre Age ici"><br>
+        <label>Note :</label>
+        <input type="text" name="note" id="note" placeholder="Entrez votrez Notes ic">
+        <input type="button" value="Envoyer" onclick="  Enregister()"><br>
+        <input type="button" value="AfficherEtudiants" onclick="AfficherEtudiants()">
+        <input type="button" value="ModifierNote()" onclick="ModifierNote()">
+        <input type="button" value="SupprimerEtudiant(nom)" onclick="SupprimerEtudiant()">
+        <input type="button" value="CalculerMoyenne()" onclick="CalculerMoyenne()"><br>
+    </form>
+    <div id="liste"></div>
+    <script>
+      let  Etudiant=[];
+        function Enregister(){
+            let nom=document.getElementById("N").value;
+            let prenom=document.getElementById("P").value;
+            let age=Number(document.getElementById("age").value);
+            let note=parseFloat(document.getElementById("note").value);
+            let nouvell_Objet={
+                Nom:nom,
+                Prenom:prenom,
+                _Age:age,
+                Note:note,
+                validation:"",
+                Validation(){
+                    if(this.Note>=10){
+                        this.validation="Admis"
+                    }
+                    else{
+                        this.validation="Ajourner"
+                    }
+                },
+                get Age(){return this._Age},
+                set Age(a) { if( a > 0) {this._Age = a;} else{this._Age="Imposible dajouter un note negative";return}  }
+            }
+            nouvell_Objet.Validation();
+            Etudiant.push(nouvell_Objet);
+            document.getElementById("N").value="";
+            document.getElementById("P").value="";
+            document.getElementById("age").value="";
+            document.getElementById("note").value="";
+        }
+        function AfficherEtudiants(){
+            let a=document.getElementById("liste");
+                a.innerHTML="";
+            for(let nom of Etudiant){
+                let p=document.createElement("p");
+                p.textContent=nom.Nom+" "+nom.Prenom+" "+nom.Note+" "+nom._Age;
+                a.appendChild(p);
+            }
+        }
+        function ModifierNote(){
+            let recherche=prompt("Entrez le nom de Letudiant a suprimer :");
+            for(let nom of Etudiant){
+                if(nom.Nom==recherche){
+                   let note=parseFloat(prompt("Entrez la nouvelle note de letudiant "+nom.Nom+" :"));
+                    if(note<0 || note>20){
+                        alert("Imposible dajouter un note nigative ou suparieur a 20 ");
+                        return;
+                    }
+                    nom.Note=note;
+                }
+            }
+        }
+        function SupprimerEtudiant(){
+           let chercher=prompt("Entrez le nom de letudiant a suprimet :");
+            let trouver=0;
+            for(let i=0;i<Etudiant.length;i++){
+                if(Etudiant[i].Nom==chercher){
+                    Etudiant.splice(i,1);
+                    alert("Etudiant suprimer Merci");
+                    trouver=1;
+                }
+            }
+            if(!trouver){
+                alert("Le nom nexiste pas dans la liste de Etudiant :");
+            }
+        }
+        function CalculerMoyenne(){
+            let somme=0;
+            for(let nom of Etudiant){
+                somme+=nom.Note;
+            }
+            let moyen=somme/Etudiant.length;
+            alert("la moyen de classe est :"+ moyen);
+        }
+    </script>
+</body>
+</html>
