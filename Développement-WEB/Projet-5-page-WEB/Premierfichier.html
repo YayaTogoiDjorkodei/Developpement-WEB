@@ -4,6 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .sp{
+            color: red;
+        }
+        h1,h2,h3{
+            text-align: center;
+            color: red;
+            text-transform: capitalize;
+            cursor: pointer;
+            letter-spacing: 2px;
+            margin: 30px 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+        h1:hover,
+        h2:hover,
+        h3:hover {
+            color: white;
+            background-color: #4c6671;
+            padding: 10px 20px;
+           border-radius: 10px;
+            
+}
+
+       
+    </style>
 </head>
 <body>
     <h1 style="text-align: center;color: brown;"><strong>Cours Developpement Web</strong></h1>
@@ -48,6 +74,321 @@
     <li>Element 2</li>
     <li>Element 3</li>
    </ul>
-   
+   <h1>2.1 Liste de Definition</h1>
+        &ltdl&gt :  Definition List (Liste de définitions)  Conteneur pour la liste entière de définitions<br>
+        &ltdt&gt&gt :  Definition Term (Terme défini)  Utilisé pour spécifier un terme ou un mot à définir <br>
+        &ltdd&gt :  Definition Description (Description du terme)  Utilisé pour fournir la définition ou la description du 
+        terme spécifié dans  <br>
+        Exemple : <br>
+<dl>
+   <dt style="color: rgb(222, 142, 38);">HTML :</dt>
+      <dd>Langage de balisage pour les pages web.</dd>
+  <dt style="color: rgb(237, 166, 73);">CSS</dt>
+      <dd>Langage de style pour HTML.</dd>
+</dl>
+    <h1>3 Afficher des caractères spéciaux</h1>
+        <p>Certains caractères (comme les chevrons ou symboles) doivent être affichés 
+         via des entités HTML pour éviter qu'ils soient interprétés comme des balises</p>
+    <p>Exemple 1 : Caractères spéciaux </p>
+    <p>Symbole copyright : &copy;</p>
+    <p>Symbole euro : &euro;</p>
+    <p>Pour plus de caractères visitez ce lien : 
+    https://www.leptidigital.fr/productivite/caracteres-speciaux-html-2-19297</p>
+        <h1>Marquer du texte en HTML</h1>
+            <p>La balise &ltmark&gt &lt /mark&gt permet de surligner du texte pour attirer l’attention 
+            sur une partie particulière, souvent utilisée pour les résultats de 
+            recherche ou les passages importants exemple: <mark>ici ce ecrite par mark </mark>.</p>
+    <h1>4 - Ajouter des éléments multimédia</h1>
+        <p>Pour insérer une image, on utilise la balise <mark>&ltimg&gt</mark>. L'attribut <mark>src</mark> spécifie 
+        le chemin vers l'image, et l'attribut <mark>alt</mark> fournit une description 
+        alternative pour l'image (utile pour l'accessibilité et si l'image ne peut 
+        pas être affichée)</p>
+        <p>Exemple 1:
+        &ltimg <mark>src</mark>="images/logo.png" <mark>alt</mark>="Logo de l'entreprise" &gt</p>
+        <p>Exemple 2: 
+        &ltimg <mark>src</mark>="images/paysage.png" <mark>alt</mark>="Photo de paysage"&gt </p>
+        <div style="color: rgb(216, 138, 44); font: size 10px;;">Différencier chemin relatif et chemin absolu :</div>
+        <p>
+            <div style="color: rgb(210, 36, 36);">Chemin relatif :</div> Le chemin est relatif à la page web actuelle. Par exemple, si l'image 
+        est dans un dossier "images" à côté de la page web, le chemin relatif sera 
+        "images/nom_image.jpg".
+        <div style="color:red ;">Chemin absolu :</div> Le chemin complet depuis la racine du site web ou même depuis 
+        un autre site web. Par exemple : "/images/nom_image.jpg" (depuis la racine du 
+        site) ou "https://www.example.com/images/nom_image.jpg"
+        </p>
+    <h1>4.1 Spécifier la taille des images </h1>
+            <p>On utilise les attributs <mark>width</mark> et <mark>height</mark> pour définir la <mark>largeur</mark> et la 
+            <mark>hauteur</mark> de l'image en pixels</p>
+    <h1>4.2 Exemple :</h1>
+            <p>taille originale <br>
+            &ltimg <mark>src</mark>="images/paysage.png" <mark>alt</mark>="Paysage"&gt<br>
+            taille personnalisée <br>
+            &ltimg <mark>src</mark>="images/paysage.png" <mark>alt</mark>="Paysage" 
+            <mark>width</mark>="200" <mark>height</mark>="125"&gt<br>
+            &ltimg src="images/paysage.png" alt="Paysage" 
+            <mark>width</mark>="400" <mark>height</mark>="250"&gt</p>
+            <p>Les formats courants sont : <br>
+            JPEG : Idéal pour les photographies avec des dégradés de couleur. <br>
+            PNG : Supporte la transparence et est idéal pour les graphiques. <br>
+            GIF : Pour les animations simples. <br>
+            SVG : Graphiques vectoriels, parfaits pour les logos et icônes, car ils 
+            se redimensionnent sans perte de qualité</p>
+            <div>Insérer des vidéos :</div>
+
+            <p>On utilise la balise &lt <mark>video</mark> &gt pour intégrer des vidéos. Les attributs <mark>src</mark>, 
+            <mark>width</mark>, <mark>height</mark> et <mark>controls</mark> (pour afficher les contrôles de lecture) sont 
+            importants</p>
+
+            <p>Exemple :</p>
+            <p> &lt <mark>video</mark> <mark>src</mark>="videos/maVideo.webm" <mark>width</mark>="640" <mark>height</mark>="360" <mark>controls</mark>&gt &lt/video&gt </p>
+    
+        <h1>Incorporer des vidéos YouTube </h1>
+            <p>YouTube fournit un code d'intégration (embed code) que tu peux copier 
+            et coller dans ton HTML. 
+            Il s'agit généralement d'un élément &lt <mark>iframe</mark> &gt </p>
+            &lt <mark>iframe</mark> width="560" height="315" src="https://www.youtube.com/embed/ID_DE_LA_VIDEO" 
+            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard
+            write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen &gt &lt/<mark>iframe</mark> &gt
+    <h1>exercices</h1>
+            <p>
+            Exercice 1 : Créez un nouveau fichier texte et enregistrez-le (presentation.html).
+            Structure de base : Commencez par ajouter la structure de base d'un document 
+            HTML :</p>
+            <p>
+Exercice 2 : Création d'une liste de vos plats préférés <br>
+• Créez un nouveau fichier HTML (par exemple, plats_preferes.html). <br>
+• Structure de base : Ajoutez la structure de base du document HTML comme dans  
+l'exercice précédent. <br>
+• Ajoutez une liste : <br>
+• Utilisez la balise &ltul&gt pour créer une liste non ordonnée (à puces). <br>
+• Utilisez la balise &ltrol&gt  pour créer une liste ordonnée (numérotée). <br>
+• Utilisez la balise &ltli&gt pour ajouter chaque élément de votre liste (vos plats préférés). <br>
+• Ouvrez le fichier plats_preferes.html dans votre navigateur pour voir le résultat</p> 
+<h1>Ajouter des fichiers audio :</h1>
+<p>On utilise la balise &lt <mark>audio</mark> &gt pour intégrer des fichiers audio. 
+L'attribut <mark>src</mark> spécifie le chemin vers le fichier audio, et l'attribut 
+<mark>controls</mark> ajoute les contrôles de lecture</p>
+<p>Exemple :
+&lt <mark>audio</mark> <main>src</main>="audios/son.mp3" <mark>controls</mark> &gt &lt/audio &gt </p>
+<div><h1>Utiliser l'élément &ltfigure&gt &lt/figure&gt</h1></div>
+<p>L'élément &lt <mark>figure</mark>& gt est utilisé pour regrouper du contenu (comme une 
+image ou une vidéo) avec sa légende.
+Exemple </p>
+<p><figure>
+<img src="images/graphe.png" alt="Graphe">
+&lt <mark>figcaption</mark> &gt Graphe montrant l'évolution des ventes.&lt/ <mark>figcaption</mark> &gt
+&lt / <mark>figure</mark> &gt </p>
+<H1>5 - Découvrir les balises structurantes du langage HTML5   </H1>
+<p>HTML5 introduit des balises sémantiques qui définissent clairement les différentes 
+parties d'une page.
+Ces balises améliorent l'accessibilité et le référencement. <br>
+Exemple : Balises sémantiques de bas <br>
+&lt <mark>header</mark> &gt
+En-tête du site &lt <mar>header</mar>&gt
+<main>  
+&lt<mark>article</mark>&gt <br>
+&lth1&gt Titre de l'article &lth1&gt <br>
+&lt p &gt Contenu de l'article. &ltp &gt <br>
+&lt<mark>/article</mark>&gt
+</main>
+ &lt <mark>footer</mark> &gt
+<p>Pied de page du site</p>
+&lt<mark>/footer</mark> &gt
+</p>
+<h1>6. Mettre en place des liens</h1>
+<p>La balise &lt<mark>a</mark>&gt est utilisée pour créer des liens hypertextes vers d'autres 
+pages, sections d'une page ou ressources</p>
+<p>Exemple 1 :
+&lta href="https://www.google.com">Visitez google.com &lt/a&gt  <br>
+Exemple 2 :
+&lta href="page2.html">Aller à la page 2 &lt/a&gt 
+ </p>
+ <h1>7. Créer des liens vers d'autres sites</h1>
+ <p>Pour lier vers des sites externes, on utilise des URL absolues. Il est 
+souvent conseillé d'ouvrir ces liens dans un nouvel onglet pour ne pas 
+perturber la navigation sur votre site <br>
+Exemple 1 :
+&lta href="https://www.google.com" target="_blank"&gtGoogle &lt/a&gt</p>
+<h1>8. Créer des liens vers les régions d'une page</h1>
+<p>Les liens internes (ancrages) permettent aux utilisateurs de naviguer 
+directement vers une section spécifique de la page.</p>
+<p>Exemple 1 : 
+&lta href="#section1"&gtAller à la section 1&lt/a&gt <br>
+Exemple 2 :
+&lth2 id="contact"&gtContactez-nous&lt/h2&gt <br>
+&lt!-- Plus bas dans la page --&gt <br>
+&lta href="#contact"&gtRetourner à la section Contact&lt/a&gt
+</p>
+<h1>9. Télécharger des document</h1>
+<p>Pour permettre aux utilisateurs de télécharger des fichiers, on utilise 
+l'attribut <span style="color: red;">download</span> dans la balise &lt<mark>a</mark>&gt </p>
+<p>Exemple 1 : <br>
+&lta <span style="color: red;">href</span>="/docs/Guide.pdf" <span style="color: red;">download="leguide.pdf"</span>&gtTélécharger le 
+guide PDF&lt/a&gt
+<br>
+&lta <span class="sp">href</span>="/docs/Guide.pdf" &gtvisualiser le guide PDF&lt/a&gt <br>
+Exemple 2 : <br>
+&lta <span class="sp"</span>="files/report.docx" <span style="color: red;">download="Rapport_Annuel.docx"</span>&gt
+Télécharger le rapport annuel&lt/a&gt
+</p>
+<h1>10. Lier à une adresse e-mai</h1>
+<p>L'attribut <span class="sp">mailto:</span> dans le <span class="sp">href</span> permet de créer un lien qui ouvre le client de 
+messagerie de l'utilisateur</p>
+<p>Exemple 1 :
+&lta href="mailto:contact@example.com">Envoyer un e-mail&lt/a&gt <br>
+Exemple 2 :
+&lta href="mailto:support@example.com?subject=Demande%20d'assistance"&gt 
+Contact Support &lt/a&gt
+</p>
+<h1>11. Découvrir l'élément &ltnav&gt &lt/nav&gt</h1>
+<p>La balise <span class="sp">&ltnav&gt</span> définit une section de navigation regroupant plusieurs 
+liens, facilitant ainsi la navigation sur le site.</p>
+<p>Exemple 1 : <br>
+    &ltnava&gt <br>
+        &ltul&gt <br>
+            &ltli&gt&lta href="index.html"&gtAccueil&lt/a&gt &lt/li&gt <br>
+            &ltli&gt&lta href="index.html"&gt>À propos &lt/a&gt &lt/li&gt <br>
+            &ltli&gt&lta href="index.html"&gtContact&lt/a&gt &lt/li&gt <br>
+
+    &lt/ul&gt
+    &lt/nav&gt <br>
+    Exemple 2 :  <br>
+    &ltnav&gt
+    &lta <span style="color: red;">href</span>="home.html"&gtAccueil&lt/a&gt | <br>
+    &lta <span style="color: red;">href</span>="home.html"&gtÀ propo&lt/a&gt | <br>
+    &lta <span style="color: red;">href</span>="home.html"&gtContacl&lt/a&gt  <br>
+
+    &lt/nav&gt
+    </p>
+    <h1>12. Tableaux</h1>
+    <p>HTML permet de structurer des données sous forme de tableaux.
+Un tableau est défini à l'aide de l'élément &lt <span style="color: rebeccapurple;">table</span> &gt.Il est composé de 
+lignes (&lttr&gt), de cellules (&lttd&gt) et d'en-têtes (&ltth&gt).
+&lttable&gt : Définit le tableau <br>
+&lttr&gt : Définit une ligne. <br>
+&ltth&gt : Définit une cellule d en-tête (en gras). <br>
+&lttd&gt : Définit une cellule de données.</p>
+<h1>Fusionner des Cellules</h1>
+<p>
+    <span class="sp">colspan</span> : Fusionner des colonnes. <br>
+<span class="sp">rowspan</span> : Fusionner des lignes. <br>
+&lttable border="1"&gt  <br>
+&lttr&gt <br>
+&ltth colspan="2">Informations&lt/th&gt <br>
+&lt/tr&gt <br>
+&lttr&gt <br>
+&lttd&gtNom&lt/td&gt <br>
+&lttd&gtAli&lt/td&gt <br>
+&lt/tr&gt <br>
+&lt/table&gt <br>
+
+
+    <table border="1">
+    <tr>
+    <th colspan="2">Informations</th>
+    </tr>
+    <tr>
+        <td>Nom</td>
+    <td>Ali</td>
+    </tr>
+</table>
+</p>
+<h1>13.  Créer des formulaires</h1>
+            <p>Les formulaires recueillent des données auprès des utilisateurs. La balise 
+            &lt <span class="sp">form</span> &gt regroupe tous les éléments de saisie et définit les attributs action 
+            (destination des données) et <span class="sp">method</span (méthode de transmission).</p>
+            <p>Exemple 1 : <br>
+&ltform <span class="sp">action</span>="traitement.php" <span class="sp">method="post"</span>&gt
+&lt!-- Champs du formulaire ici --&gt
+&lt/form&gt <br>
+Exemple 2 : <br>
+&ltform action="submit.html" method="get"&gt
+&ltp&gt Veuillez remplir le formulaire ci-dessous.&lt/p&gt
+&lt/form&gt
+</p> 
+<h1>Aborder la balise &ltinput&gt </h1>
+<p>La balise &lt<span class="sp">input</span>&gt crée divers types de champs (texte, mot de passe, 
+nombre, etc.) grâce à lattribut <span class="sp">type</span>.</p>
+<p>Exemple 1 : <br>
+    &ltinput type="text" name="nom" placeholder="Votre nom"&gt : &nbsp;
+<input type="text" name="nom" placeholder="Votre nom"> <br>
+
+Exemple 2 : <br>
+altinput type="password" name="motdepasse" placeholder="Mot de 
+passe"&gt: &nbsp;
+<input type="password" name="motdepasse" placeholder="Mot de 
+passe">
+</p>
+<h1>Utiliser la balise &ltlabel&gt&lt/label&gt</h1>
+<p>&lt <span class="sp">label</span> &gt associe un texte descriptif à un champ de formulaire via lattribut for, 
+améliorant ainsi laccessibilité et la convivialité.</p>
+    <p>Exemple 2 : <br> 
+&ltlabel <span class="sp">for</span>="username"&gtNom d'utilisateur :&lt/label&gt <br>
+&ltinput <span class="sp">type</span>="text" id="username" <span class="sp">name</span>="username"&gt 
+</p>
+<h1>Créer des champs de type email</h1>
+<p>Les champs de type email (<input type="email">) permettent une validation 
+automatique basique des adresses électroniques.</p>
+<p>Exemple 2 : <br>
+&ltform <span class="sp">action</span>="subscribe.php" <span class="sp">method</span>="post"&gt <br>
+&ltlabel <span class="sp">for</span>="subscribeEmail"&gtVotre email :&lt/label&gt <br>
+&ltinput <span class="sp">type</span>="email" id="subscribeEmail" <span class="sp">name</span>="subscribeEmail"  <br>
+<span class="sp">require</span>d&gt
+&ltbutton <span class="sp">type</span>="submit"&gtS'abonner&lt/button&gt
+&lt/form&gt
+
+    <br>
+    <form action="subscribe.php" method="post">
+        <label for="subscribeEmail">Votre email :</label>
+        <input type="email" id="subscribeEmail" name="subscribeEmail" 
+        required>
+        <button type="submit">S'abonner</button>
+    </form>
+</p>
+        <h1>Utiliser la balise &lttextarea&gt&lt/textarea&gt</h1>
+            <p>La balise &lt <span class="sp">textarea</span> &gt est conçue pour des saisies de texte sur plusieurs lignes, comme des 
+            commentaires ou des messages.</p>
+            <p>&ltlabel <span class="sp">for</span>="message"&gtMessage :&lt/label&gt
+            &lt textarea <span class="sp">id</span>="message" <span class="sp">name</span>="message" <span class="sp">rows</span>="taille de longeur " <span class="sp">cols</span>="taille de largeur"&gt &lt/textarea&gt</p> <br>
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" rows="5" cols="30"></textarea>
+            <h1>Créer un bouton Submit</h1>
+            <p>Les boutons de soumission permettent d'envoyer les données du 
+            formulaire vers le serveur.</p>
+            <p>Exemple 1 : <br>
+            &ltbutton type="submit"&gtEnvoyer&lt/button&gt
+            <button type="submit">Envoyer</button>
+            Exemple 2 : <br>
+            &ltinput type="submit" value="Valider"&gt
+            <input type="submit" value="Valider">
+            </p>
+            <h1>Valider les formulaires automatiquement</h1>
+            <p>HTML5 offre des attributs de validation qui permettent de vérifier la 
+            saisie de l'utilisateur sans avoir besoin de scripts supplémentaires 
+            (exemple : <span class="sp">required</span>,<span class="sp">pattern</span> ).</p>
+            <p>Exemple 1 : Champ requis ampeche lenvoi si le chapms et vide  <br>
+            &ltinput <span class="sp">type</span>="text" <span class="sp">name</span>="prenom" <span class="sp">required</span>&gt 
+            <input type="text" name="prenom" required></p>
+            <p>Exemple 2 : l'attribut pattern pour un code postal permete aussi de guider a lutilistaeur 
+            &ltinput <span class="sp">type</span>="text" <span class="sp">name</span>="codePostal" <span class="sp">pattern</span>="[0-9]{5}" 
+            <span class="sp">title</span>="Veuillez entrer un code postal à 5 chiffres" <span class="sp">required</span>&gt
+            <input type="text" name="codePostal" pattern="[0-9]{5}" 
+            title="Veuillez entrer un code postal à 5 chiffres" required>
+            </p>
+            <h1>autres types de champs</h1>
+            <p>Divers types de champs existent pour faciliter la saisie de données spécifiques 
+            (dates, nombres, choix multiples, etc.).</p>
+            <p>Exemple 1 : Champ de date : <br>
+            &ltlabel <span class="sp">for</span>="dateNaissance"&gtDate de naissance :&lt/label&gt <br>
+            &ltinput <span class="sp">type</span>="date" id="dateNaissance" <span class="sp">name</span>="dateNaissance"&gt
+            <label for="dateNaissance">Date de naissance :</label>
+            <input type="date" id="dateNaissance" name="dateNaissance"></p>
+            <p>Exemple 2 : Boutons radio pour sélectionner une option
+                Genre : <br>
+                &ltlabel&gt&ltinput <span class="sp">type</span>="radio" <span class="sp">name</span>="genre" value="homme"&gt Homme&lt/label&gt <br>
+                &ltlabel&gt&ltinput <span class="sp">type</span>="radio" <span class="sp">name</span>="genre" value="femme"&gt Femme&lt/label&lt <br>
+                <label><input type="radio" name="genre" value="homme"> Homme</label>
+                <label><input type="radio" name="genre" value="femme"> Femme</label>
+            </p>
 </body>
-</html>
+</html> 
